@@ -83,6 +83,7 @@ enum _OEGameCoreErrorCodes {
 @end
 
 @class OEHIDEvent, OERingBuffer;
+@protocol OEAudioBuffer;
 
 #pragma mark -
 
@@ -123,6 +124,17 @@ enum _OEGameCoreErrorCodes {
 @property(copy)     NSString             *systemIdentifier;
 
 - (void)getAudioBuffer:(void *)buffer frameCount:(NSUInteger)frameCount bufferIndex:(NSUInteger)index;
+
+/**
+ * Returns the OEAudioBuffer associated to the specified audio track.
+ * @discussion A concrete game core can override this method to customize
+ *      its audio buffering system. OpenEmu never calls the -write:maxLength: method
+ *      of a buffer returned by this method.
+ * @param index The audio track index.
+ * @returns The audio buffer from which to read audio samples.
+ */
+- (id<OEAudioBuffer>)audioBufferAtIndex:(NSUInteger)index;
+
 - (OERingBuffer *)ringBufferAtIndex:(NSUInteger)index;
 
 - (void)calculateFrameSkip:(NSUInteger)rate;

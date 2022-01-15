@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8363A434193CA52400F18425 /* OEGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = 8363A433193CA52400F18425 /* OEGeometry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ABD26C6F2793483200FA9AD0 /* OEAudioBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = ABD26C6E2793482100FA9AD0 /* OEAudioBuffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C6772A2A1710A4BA00ED580A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6772A291710A4BA00ED580A /* Cocoa.framework */; };
 		C6772A341710A4BA00ED580A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6772A321710A4BA00ED580A /* InfoPlist.strings */; };
 		C6772A6E1710BD6200ED580A /* OpenEmuBase.h in Headers */ = {isa = PBXBuildFile; fileRef = C6772A601710BD6200ED580A /* OpenEmuBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -101,6 +102,7 @@
 
 /* Begin PBXFileReference section */
 		8363A433193CA52400F18425 /* OEGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OEGeometry.h; sourceTree = "<group>"; };
+		ABD26C6E2793482100FA9AD0 /* OEAudioBuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OEAudioBuffer.h; sourceTree = "<group>"; };
 		C6772A261710A4BA00ED580A /* OpenEmuBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenEmuBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6772A291710A4BA00ED580A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		C6772A2C1710A4BA00ED580A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -275,6 +277,7 @@
 				C6772A801710C6D100ED580A /* NSString+UUID.h */,
 				C6772A811710C6D100ED580A /* NSString+UUID.m */,
 				8363A433193CA52400F18425 /* OEGeometry.h */,
+				ABD26C6E2793482100FA9AD0 /* OEAudioBuffer.h */,
 				C6772A301710A4BA00ED580A /* Supporting Files */,
 			);
 			path = OpenEmuBase;
@@ -416,6 +419,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABD26C6F2793483200FA9AD0 /* OEAudioBuffer.h in Headers */,
 				C6772A6E1710BD6200ED580A /* OpenEmuBase.h in Headers */,
 				C6772A821710C6D100ED580A /* NSString+UUID.h in Headers */,
 				C6772A721710BD6200ED580A /* OEAbstractAdditions.h in Headers */,
@@ -677,7 +681,7 @@
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
+				SDKROOT = macosx10.11;
 				VALID_ARCHS = x86_64;
 				WRAPPER_EXTENSION = framework;
 			};
@@ -709,7 +713,7 @@
 				INFOPLIST_FILE = "OpenEmuBase/OpenEmuBase-Info.plist";
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
+				SDKROOT = macosx10.11;
 				VALID_ARCHS = x86_64;
 				WRAPPER_EXTENSION = framework;
 			};

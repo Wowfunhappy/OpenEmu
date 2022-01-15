@@ -27,6 +27,7 @@
 #import "OEGameCore.h"
 #import "OEGameCoreController.h"
 #import "OEAbstractAdditions.h"
+#import "OEAudioBuffer.h"
 #import "OERingBuffer.h"
 #import "OETimingUtils.h"
 
@@ -405,6 +406,14 @@ static NSTimeInterval defaultTimeInterval = 60.0;
 
 #pragma mark - Audio
 
+- (id<OEAudioBuffer>)audioBufferAtIndex:(NSUInteger)index
+{
+    #pragma clang diagnostic push
+    #pragma clang diagnostic ignored "-Wdeprecated-declarations"
+    return [self ringBufferAtIndex:index];
+    #pragma clang diagnostic pop
+}
+
 - (NSUInteger)audioBufferCount
 {
     return 1;
@@ -443,12 +452,11 @@ static NSTimeInterval defaultTimeInterval = 60.0;
 
 - (NSUInteger)audioBufferSizeForBuffer:(NSUInteger)buffer
 {
-    // 4 frames is a complete guess
     double frameSampleCount = [self audioSampleRateForBuffer:buffer] / [self frameInterval];
     NSUInteger channelCount = [self channelCountForBuffer:buffer];
     NSUInteger bytesPerSample = [self audioBitDepth] / 8;
     NSAssert(frameSampleCount, @"frameSampleCount is 0");
-    return channelCount*bytesPerSample * frameSampleCount;
+    return channelCount * bytesPerSample * frameSampleCount;
 }
 
 - (double)audioSampleRateForBuffer:(NSUInteger)buffer

@@ -26,8 +26,9 @@
 
 #import <Foundation/Foundation.h>
 #import <OpenEmuBase/TPCircularBuffer.h>
+#import "OpenEmuBase/OEAudioBuffer.h"
 
-@interface OERingBuffer : NSObject
+@interface OERingBuffer : NSObject <OEAudioBuffer>
 {
 @public
     TPCircularBuffer buffer;
